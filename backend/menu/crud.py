@@ -1,6 +1,5 @@
 from shared.supabase import create_supabase_client
 
-# Mendapatkan klien Supabase
 supabase = create_supabase_client()
 
 def create_menu(id: int, restaurant_id: int, name: str, price: float, waste_saved: str):
