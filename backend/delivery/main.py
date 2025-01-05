@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from shared.supabase import supabase
-from .crud import create_delivery, update_delivery_status, get_deliveries
-from .routers import delivery_router
+from delivery.crud import create_delivery, update_delivery_status, get_deliveries
+from delivery.routers import delivery_router
 
 app = FastAPI()
 
@@ -13,7 +13,7 @@ def create_delivery_endpoint(order_id: int, user_id: int, restaurant_id: int, st
 def update_delivery_status_endpoint(order_id: int, status: str):
     return update_delivery_status(order_id, status)
 
-@app.get("/deliveries/")
+@app.get("/delivery/")
 async def get_all_deliveries():
     return get_deliveries()
 

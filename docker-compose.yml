@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
   restaurant:
     build:
       context: ./backend/restaurant
     ports:
       - "8000:8000" # Port host:port container
-    container_name: restaurant_service
+    container_name: restaurant
     command: uvicorn main:app --host 0.0.0.0 --port 8000
 
   menu:
@@ -14,7 +12,7 @@ services:
       context: ./backend/menu
     ports:
       - "8001:8000" # Pemetaan port host ke port internal
-    container_name: menu_service
+    container_name: menu
     command: uvicorn main:app --host 0.0.0.0 --port 8000
 
   delivery:
@@ -22,5 +20,5 @@ services:
       context: ./backend/delivery
     ports:
       - "8002:8000" # Pemetaan port host ke port internal
-    container_name: delivery_service
+    container_name: delivery
     command: uvicorn main:app --host 0.0.0.0 --port 8000
