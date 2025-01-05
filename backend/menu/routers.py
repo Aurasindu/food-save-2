@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from menu.crud import create_menu
+from crud import create_menu
 
 menu_router = APIRouter()
 

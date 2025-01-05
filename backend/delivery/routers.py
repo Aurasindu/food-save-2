@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from delivery.crud import create_delivery, update_delivery_status
+from crud import create_delivery, update_delivery_status
 
 delivery_router = APIRouter()
 

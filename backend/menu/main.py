@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from shared.supabase import supabase
-from menu.crud import create_menu
-from menu.routers import menu_router
+from crud import create_menu
+from routers import menu_router
 import sys
 
 print("PYTHONPATH:", sys.path)

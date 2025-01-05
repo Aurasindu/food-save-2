@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from shared.supabase import supabase
-from delivery.crud import create_delivery, update_delivery_status, get_deliveries
-from delivery.routers import delivery_router
+from crud import create_delivery, update_delivery_status, get_deliveries
+from routers import delivery_router
 
 app = FastAPI()
 

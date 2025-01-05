@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from shared.supabase import supabase
-from restaurant.crud import create_restaurant
-from restaurant.routers import restaurant_router
+from crud import create_restaurant
+from routers import restaurant_router
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
