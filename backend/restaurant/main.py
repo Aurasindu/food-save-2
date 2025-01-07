@@ -8,6 +8,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to Food Save API! Check /docs for more information."}
+
 @app.post("/restaurants/")
 def create_restaurant_endpoint(id: int, name: str, address: str, contact_number: str):
     return create_restaurant(id, name, address, contact_number)

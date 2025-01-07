@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Google</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.min.js"></script>
+</head>
+
+<body>
+    <div class="login-container" id="login-container">
+        <h1>Login</h1>
+        <button id="google-login-btn">Login with Google</button>
+    </div>
+
+    <div class="menu-container" id="menu-container" style="display: none;">
+        <h1>Menu</h1>
+        <ul id="menu-list">
+            <!-- Menu items will appear here -->
+        </ul>
+        <button id="go-to-delivery-btn">Go to Delivery</button>
+    </div>
+
+    <div class="delivery-container" id="delivery-container" style="display: none;">
+        <h1>Delivery</h1>
+        <p>Delivery information goes here.</p>
+        <button id="go-to-menu-btn">Go to Menu</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<script>
+    const SUPABASE_URL = 'https://jrxpfkrhvnmfkmmjudvy.supabase.co'; // Ganti dengan URL Supabase project-mu
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpyeHBma3Jodm5tZmttbWp1ZHZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU3NDM4MjMsImV4cCI6MjA1MTMxOTgyM30.JKYX44Ia_yqCAsbWO_WlRCD3f1wPYOXyf7i9Ua-kYig'; // Ganti dengan Supabase anon key-mu
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const googleLoginBtn = document.getElementById('google-login-btn');
+    const loginContainer = document.getElementById('login-container');
+    const menuContainer = document.getElementById('menu-container');
+    const deliveryContainer = document.getElementById('delivery-container');
+    const menuList = document.getElementById('menu-list');
+
+    googleLoginBtn.addEventListener('click', async () => {
+        try {
+            const { data, error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+            });
+
+            if (error) {
+                console.error('Error logging in:', error);
+                alert('Failed to login. Please try again.');
+            } else {
+                console.log('Login successful:', data);
+                loginContainer.style.display = 'none'; // Sembunyikan form login
+                menuContainer.style.display = 'block'; // Tampilkan menu
+                loadMenu(); // Muat menu
+            }
+        } catch (err) {
+            console.error('Unexpected error:', err);
+        }
+    });
+
+    function loadMenu() {
+        // Dummy menu items, ganti dengan data dari backend jika sudah ada
+        const menuItems = [
+            { name: 'Pizza', price: 15.99 },
+            { name: 'Burger', price: 8.99 },
+            { name: 'Pasta', price: 12.99 }
+        ];
+
+        menuItems.forEach(item => {
+            const li = document.createElement('li');
+            li.innerText = `${item.name} - $${item.price.toFixed(2)}`;
+            menuList.appendChild(li);
+        });
+    }
+
+    // Event listener untuk tombol delivery
+    document.getElementById('go-to-delivery-btn').addEventListener('click', () => {
+        menuContainer.style.display = 'none'; // Sembunyikan menu
+        deliveryContainer.style.display = 'block'; // Tampilkan delivery
+    });
+
+    // Event listener untuk tombol kembali ke menu
+    document.getElementById('go-to-menu-btn').addEventListener('click', () => {
+        deliveryContainer.style.display = 'none'; // Sembunyikan delivery
+        menuContainer.style.display = 'block'; // Tampilkan menu
+    });
+</script>
+</body>
+
+</html>
