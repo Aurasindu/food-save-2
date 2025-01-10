@@ -2,6 +2,8 @@ services:
   restaurant:
     build:
       context: ./backend/restaurant
+    environment:
+      - API_KEY=c6b8b816c8991a66d1964bb6a0012be3
     ports:
       - "8000:80" # Port host:port container
     container_name: restaurant
@@ -10,6 +12,8 @@ services:
   menu:
     build:
       context: ./backend/menu
+    environment:
+      - API_KEY=c6b8b816c8991a66d1964bb6a0012be3
     ports:
       - "8001:80" # Pemetaan port host ke port internal
     container_name: menu
@@ -18,6 +22,8 @@ services:
   delivery:
     build:
       context: ./backend/delivery
+    environment:
+      - API_KEY=c6b8b816c8991a66d1964bb6a0012be3
     ports:
       - "8002:80" # Pemetaan port host ke port internal
     container_name: delivery
