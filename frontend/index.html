@@ -36,7 +36,7 @@
                 console.log("User is logged in:", session.user);
                 document.body.innerHTML = `<h1>Welcome, ${session.user.email}</h1>`;
                 setTimeout(() => {
-                    window.location.href = 'frontend/menu.html';
+                    window.location.href = 'frontend/foodsave.html';
                 }, 3000);
             } else {
                 console.log("No active session found.");
@@ -51,7 +51,7 @@
                 const { data, error } = await supabase.auth.signInWithOAuth({
                     provider: 'google',
                     options: {
-                        redirectTo: 'http://localhost:5500/frontend/menu.html', // atau sesuai dengan lokasi menu.html
+                        redirectTo: 'http://localhost:5500/frontend/foodsave.html', // atau sesuai dengan lokasi menu.html
                     },
                 });
 

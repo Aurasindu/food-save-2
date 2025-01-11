@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi import HTTPException, Depends, Header
 from fastapi.security.api_key import APIKeyHeader
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from shared.supabase import supabase
 from crud import create_restaurant
@@ -20,7 +21,17 @@ api_key_header = APIKeyHeader(name="X-API-Key")
 
 app = FastAPI()
 
+app.add_middleware (
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 def validate_api_key(api_key: str = Depends(api_key_header)):
+    print(f"Received API Key: {api_key}")  # Log API Key dari request
+    print(f"Expected API Key: {API_KEY}") 
     if api_key != API_KEY:
         raise HTTPException(status_code=403, detail="Invalid API Key")
 
