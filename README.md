@@ -6,5 +6,4 @@ API: Menu Service [https://foodsave-menu-3-fxfkgabkcddfhfdk.southeastasia-01.azu
 **3. Delivery Service**    
 API: Delivery Service [http://foodsave-delivery-3-a0evfnezfrgdhkef.southeastasia-01.azurewebsites.net]     
 
-Frontend is not fully developed.  
-API Key = c6b8b816c8991a66d1964bb6a0012be3  
+Frontend is developed, tetapi sekadarnya saja.    
