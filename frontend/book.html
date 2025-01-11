@@ -10,18 +10,18 @@
 </head>
 
 <body>
-    <h2>Restaurant</h2>
-    <button onclick="loadRestaurant()">Load Restaurant</button>
-    <pre id="restaurant-output"></pre>
+    <h2>Books Recommendation</h2>
+    <button onclick="loadBook()">Load Book</button>
+    <pre id="book-output"></pre>
 
     <script>
-        const API_KEY2 = 'c6b8b816c8991a66d1964bb6a0012be3';
-        const API_URL_RESTAURANT = 'https://foodsave-restaurant-dchtdndehvdva5eu.southeastasia-01.azurewebsites.net';
+        const API_KEY2 = '54632406cd1319d00e580b03dc7313db636b22e17b78a945f1ba09b60fd825ef';
+        const API_URL_BOOK = 'https://bocabookcafe-degxe0e3bkebgxgr.southeastasia-01.azurewebsites.net/';
 
         // Fungsi untuk fetch data dari endpoint menu
-        async function loadRestaurant() {
+        async function loadBook() {
             try {
-                const response = await fetch(`${API_URL_RESTAURANT}/restaurants/`, {
+                const response = await fetch(`${API_URL_BOOK}/api/secure/books/`, {
                     method: 'GET',
                     headers: {
                         'X-API-Key': API_KEY2,
@@ -34,13 +34,19 @@
                     throw new Error(`Failed to fetch menu from API: ${response.statusText}`);
                 }
 
-                const restaurants = await response.json();
-                document.getElementById('restaurant-output').textContent = JSON.stringify(restaurants, null, 2);
+                const books = await response.json();
+
+                // Ambil semua title dari data
+                const titles = books.map(book => Object.values(book)[0].title);
+
+                // Tampilkan hasilnya
+                document.getElementById('book-output').textContent = JSON.stringify(titles, null, 2);
             } catch (error) {
-                console.error('Error fetching restaurant:', error);
-                document.getElementById('restaurant-output').textContent = `Error: ${error.message}`;
+                console.error('Error fetching book:', error);
+                document.getElementById('book-output').textContent = `Error: ${error.message}`;
             }
         }
+
 
     </script>
 </body>

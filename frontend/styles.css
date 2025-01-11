@@ -1,65 +1,126 @@
-/* Gaya umum untuk body */
+h1 {
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    background-color: #6AA65BFC;
+    /* Hijau */
+    color: white;
+    font-size: 16px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #fff;
-    /* Latar belakang putih */
-}
-
-/* Kontainer login */
-.login-container {
-    text-align: center;
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    display: flex;
+    margin: 0;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Gaya untuk gambar */
-.login-image {
-    width: 150px;
-    height: auto;
-    margin-bottom: 30px;
-}
-
-/* Gaya untuk heading */
-h1 {
+h2 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Gaya untuk tombol login */
-#google-login-btn {
-    background-color: #6AA65BFC;
-    /* Warna hijau khas Google */
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+#menu-output {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+    /* Menangani teks panjang */
+    word-wrap: break-word;
     margin-top: 20px;
-    /* Memberikan jarak antara tombol dan elemen lainnya */
-    width: 100%;
-    max-width: 350px;
+    max-width: 80%;
+    min-width: 300px;
 }
 
-/* Efek hover pada tombol */
-#google-login-btn:hover {
-    background-color: #2c8b42;
-    /* Warna lebih gelap saat hover */
+#restaurant-output {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+    /* Menangani teks panjang */
+    word-wrap: break-word;
+    margin-top: 20px;
+    max-width: 80%;
+    min-width: 300px;
+}
+
+#book-output {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+    /* Menangani teks panjang */
+    word-wrap: break-word;
+    margin-top: 20px;
+    max-width: 80%;
+    min-width: 300px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #6AA65B;
+    /* Hijau */
+    color: white;
+    font-size: 16px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #45a049;
+    /* Hijau lebih gelap */
+}
+
+button {
+    background-color: #6AA65B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:focus {
+    outline: none;
 }

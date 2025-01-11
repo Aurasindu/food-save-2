@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="foodsavestyles.css">
-    <title>Food Save API Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Integrasi Food Save x Book Cafe</title>
 </head>
 
 <body>
-    <h1>Food Save API Test</h1>
-
     <h2>Menu</h2>
     <button onclick="loadMenu()">Load Menu</button>
     <pre id="menu-output"></pre>
@@ -20,7 +18,6 @@
         const API_KEY2 = 'c6b8b816c8991a66d1964bb6a0012be3';
         const API_URL_MENU = 'https://foodsave-4-menu-bsg9erczatbzeac9.southeastasia-01.azurewebsites.net'; // Ganti dengan URL endpoint menu yang benar
 
-        // Fungsi untuk fetch data dari endpoint menu
         async function loadMenu() {
             try {
                 const response = await fetch(`${API_URL_MENU}/menu/`, {
