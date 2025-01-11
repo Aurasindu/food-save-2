@@ -1,7 +1,10 @@
 Proyek ini menggunakan arsitektur microservices dengan tiga service utama:  
 **1. Restaurant Service**     
-API: Restaurant Service (foodsave-restaurant-2-ctgdbjf4bhdgg2a3.southeastasia-01.azurewebsites.net)  
+API: Restaurant Service [http://foodsave-restaurant-3-f8dmaygghrenc7gg.southeastasia-01.azurewebsites.net]  
 **2. Menu Service**    
-API: Menu Service (foodsave-menu-2-exagdpf9h3ckezcy.southeastasia-01.azurewebsites.net)  
+API: Menu Service [https://foodsave-menu-3-fxfkgabkcddfhfdk.southeastasia-01.azurewebsites.net]    
 **3. Delivery Service**    
-API: Delivery Service (foodsave-delivery-2-b7fdcfh2e3g7a2d2.southeastasia-01.azurewebsites.net)   
+API: Delivery Service [http://foodsave-delivery-3-a0evfnezfrgdhkef.southeastasia-01.azurewebsites.net]     
+
+Frontend is not fully developed.  
+API Key = c6b8b816c8991a66d1964bb6a0012be3  
